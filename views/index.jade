@@ -35,6 +35,10 @@ html
             $('#chat-zone').prepend('<p><em>' + data + ' joined</em></p>');
           });
 
+          socket.on('user_quit', function(data) {
+            $('#chat-zone').prepend('<p><em>' + data + ' joined</em></p>');
+          });
+
           // send message
           $('#chat-form').submit(function () {
             var message = $('#message').val();
@@ -44,13 +48,17 @@ html
             return false;
           });
 
+          $(window).on("beforeunload", function() {
+             socket.emit('disconnect');
+          });
+
           function insertMessage(nick, message) {
             message = surroundHTTP(message);
             $('#chat-zone').prepend('<p><strong>' + nick + '</strong> ' + message + '</p>');
           };
 
           function surroundHTTP(message) {
-            var regex = new RegExp("^(.*?)\b*(http:\/\/.*)\b*(.*)$");
+            var regex = new RegExp("^(.*?)\b*(https?:\/\/.*)\b*(.*)$");
             var exec;
             if (exec = regex.exec(message)) {
                 return exec[1] + '<a target="_blank" href="' + exec[2] + '">' + exec[2] + '</a>' + exec[3];

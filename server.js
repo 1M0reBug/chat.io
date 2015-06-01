@@ -4,6 +4,7 @@ var server = require('http').Server(app);
 
 var io = require('socket.io')(server);
 var redis = require('socket.io-redis');
+//io.adapter(redis({host: 'localhost', port:6379}));
 io.adapter(redis({host: '192.168.3.1', port:6379}));
 
 
@@ -34,6 +35,11 @@ io.sockets.on('connection', function (socket) {
     message = ent.encode(message);
     socket.broadcast.emit('message', {nick: socket.nick, message: message});
   });
+
+  socket.on('disconnect', function() {
+    socket.broadcast.emit('user_quit', sock.nick);
+  });
+
 });
 
 server.listen(port);

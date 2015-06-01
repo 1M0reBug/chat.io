@@ -1,98 +1,27 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'ent' ]
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'start' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.37
 4 verbose node symlink /usr/bin/node
-5 verbose cache add [ 'ent', null ]
-6 verbose cache add name=undefined spec="ent" args=["ent",null]
-7 verbose parsed url { protocol: null,
-7 verbose parsed url   slashes: null,
-7 verbose parsed url   auth: null,
-7 verbose parsed url   host: null,
-7 verbose parsed url   port: null,
-7 verbose parsed url   hostname: null,
-7 verbose parsed url   hash: null,
-7 verbose parsed url   search: null,
-7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: 'ent',
-7 verbose parsed url   path: 'ent',
-7 verbose parsed url   href: 'ent' }
-8 silly lockFile 79a64683-ent ent
-9 verbose lock ent /home/jordan/.npm/79a64683-ent.lock
-10 silly lockFile 79a64683-ent ent
-11 silly lockFile 79a64683-ent ent
-12 verbose addNamed [ 'ent', '' ]
-13 verbose addNamed [ null, '*' ]
-14 silly lockFile 200338f0-ent ent@
-15 verbose lock ent@ /home/jordan/.npm/200338f0-ent.lock
-16 silly addNameRange { name: 'ent', range: '*', hasData: false }
-17 verbose request where is /ent
-18 verbose request registry https://registry.npmjs.org/
-19 verbose request id aaec9b7c4b0edabd
-20 verbose url raw /ent
-21 verbose url resolving [ 'https://registry.npmjs.org/', './ent' ]
-22 verbose url resolved https://registry.npmjs.org/ent
-23 verbose request where is https://registry.npmjs.org/ent
-24 info trying registry request attempt 1 at 09:23:33
-25 verbose etag "54SNRWMZI0VCRLY3JT6T6N4DF"
-26 http GET https://registry.npmjs.org/ent
-27 http 304 https://registry.npmjs.org/ent
-28 silly registry.get cb [ 304,
-28 silly registry.get   { date: 'Mon, 01 Jun 2015 07:23:32 GMT',
-28 silly registry.get     via: '1.1 varnish',
-28 silly registry.get     'cache-control': 'max-age=60',
-28 silly registry.get     etag: '"54SNRWMZI0VCRLY3JT6T6N4DF"',
-28 silly registry.get     age: '45',
-28 silly registry.get     connection: 'keep-alive',
-28 silly registry.get     'x-served-by': 'cache-ams4122-AMS',
-28 silly registry.get     'x-cache': 'HIT',
-28 silly registry.get     'x-cache-hits': '1',
-28 silly registry.get     'x-timer': 'S1433143412.768215,VS0,VE0',
-28 silly registry.get     vary: 'Accept' } ]
-29 verbose etag https://registry.npmjs.org/ent from cache
-30 silly addNameRange number 2 { name: 'ent', range: '*', hasData: true }
-31 silly addNameRange versions [ 'ent',
-31 silly addNameRange   [ '0.0.1',
-31 silly addNameRange     '0.0.2',
-31 silly addNameRange     '0.0.3',
-31 silly addNameRange     '0.0.4',
-31 silly addNameRange     '0.0.5',
-31 silly addNameRange     '0.0.6',
-31 silly addNameRange     '0.0.7',
-31 silly addNameRange     '0.1.0',
-31 silly addNameRange     '1.0.0',
-31 silly addNameRange     '2.0.0',
-31 silly addNameRange     '2.1.0',
-31 silly addNameRange     '2.1.1',
-31 silly addNameRange     '2.2.0' ] ]
-32 verbose addNamed [ 'ent', '2.2.0' ]
-33 verbose addNamed [ '2.2.0', '2.2.0' ]
-34 silly lockFile 37be4249-ent-2-2-0 ent@2.2.0
-35 verbose lock ent@2.2.0 /home/jordan/.npm/37be4249-ent-2-2-0.lock
-36 silly lockFile 01b4fe45-stry-npmjs-org-ent-ent-2-2-0-tgz https://registry.npmjs.org/ent/-/ent-2.2.0.tgz
-37 verbose lock https://registry.npmjs.org/ent/-/ent-2.2.0.tgz /home/jordan/.npm/01b4fe45-stry-npmjs-org-ent-ent-2-2-0-tgz.lock
-38 verbose addRemoteTarball [ 'https://registry.npmjs.org/ent/-/ent-2.2.0.tgz',
-38 verbose addRemoteTarball   'e964219325a21d05f44466a2f686ed6ce5f5dd1d' ]
-39 info retry fetch attempt 1 at 09:23:33
-40 verbose fetch to= /tmp/npm-5474-uTiExjK2/registry.npmjs.org/ent/-/ent-2.2.0.tgz
-41 http GET https://registry.npmjs.org/ent/-/ent-2.2.0.tgz
-42 http 200 https://registry.npmjs.org/ent/-/ent-2.2.0.tgz
-43 silly lockFile 01b4fe45-stry-npmjs-org-ent-ent-2-2-0-tgz https://registry.npmjs.org/ent/-/ent-2.2.0.tgz
-44 silly lockFile 01b4fe45-stry-npmjs-org-ent-ent-2-2-0-tgz https://registry.npmjs.org/ent/-/ent-2.2.0.tgz
-45 silly lockFile 37be4249-ent-2-2-0 ent@2.2.0
-46 silly lockFile 37be4249-ent-2-2-0 ent@2.2.0
-47 silly lockFile 200338f0-ent ent@
-48 silly lockFile 200338f0-ent ent@
-49 error Error: EACCES, mkdir '/home/jordan/.npm/ent/2.2.0'
-49 error  { [Error: EACCES, mkdir '/home/jordan/.npm/ent/2.2.0'] errno: 3, code: 'EACCES', path: '/home/jordan/.npm/ent/2.2.0' }
-50 error Please try running this command again as root/Administrator.
-51 error System Linux 3.2.0-80-generic
-52 error command "/usr/bin/node" "/usr/bin/npm" "install" "ent"
-53 error cwd /home/jordan/Documents/ExpressProject/src/testSocket
-54 error node -v v0.10.37
-55 error npm -v 1.4.28
-56 error path /home/jordan/.npm/ent/2.2.0
-57 error code EACCES
-58 error errno 3
-59 error stack Error: EACCES, mkdir '/home/jordan/.npm/ent/2.2.0'
-60 verbose exit [ 3, true ]
+5 verbose run-script [ 'prestart', 'start', 'poststart' ]
+6 info prestart testSocket@0.0.0
+7 info start testSocket@0.0.0
+8 verbose unsafe-perm in lifecycle true
+9 info testSocket@0.0.0 Failed to exec start script
+10 error testSocket@0.0.0 start: `node server.js`
+10 error Exit status 8
+11 error Failed at the testSocket@0.0.0 start script.
+11 error This is most likely a problem with the testSocket package,
+11 error not with npm itself.
+11 error Tell the author that this fails on your system:
+11 error     node server.js
+11 error You can get their info via:
+11 error     npm owner ls testSocket
+11 error There is likely additional logging output above.
+12 error System Linux 3.2.0-80-generic
+13 error command "/usr/bin/node" "/usr/bin/npm" "start"
+14 error cwd /home/jordan/Documents/ExpressProject/src/testSocket
+15 error node -v v0.10.37
+16 error npm -v 1.4.28
+17 error code ELIFECYCLE
+18 verbose exit [ 1, true ]
