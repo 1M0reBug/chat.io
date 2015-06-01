@@ -1,0 +1,14 @@
+{
+  "name": "testSocket",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express" : "*",
+    "jade" : "*",
+    "socket.io" :"*",
+    "socket.io-redis" : "*"
+  }
+}
