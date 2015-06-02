@@ -9,6 +9,10 @@ html
                 background-color: green;
                 padding: 2px;
             }
+
+            .is-private {
+                font-style: italic;
+            }
     body
         h2 simple chat avec Socket.io
         form(id='chat-form')
@@ -16,7 +20,7 @@ html
             input(type='submit' value='send' id='send_form')
         div(id='chat-zone')
 
-        script(src='jquery.min.js' type='text/javascript').
+        script(src='js/jquery.min.js' type='text/javascript').
         script(src="/socket.io/socket.io.js" type="text/javascript").
         script(type='text/javascript').
           var socket = io.connect('http://localhost:#{port}');
@@ -27,7 +31,11 @@ html
 
           // insert message in chat zone
           socket.on('message', function(data) {
-            insertMessage(data.nick, data.message);
+            if(data.isPrivate){
+                insertPrivateMessage(data.nick, data.message);
+            } else {
+                insertMessage(data.nick, data.message);
+            }
           });
 
           // display new user connexion
@@ -36,7 +44,7 @@ html
           });
 
           socket.on('user_quit', function(data) {
-            $('#chat-zone').prepend('<p><em>' + data + ' joined</em></p>');
+            $('#chat-zone').prepend('<p><em>' + data + ' quitted</em></p>');
           });
 
           // send message
@@ -48,13 +56,14 @@ html
             return false;
           });
 
-          $(window).on("beforeunload", function() {
-             socket.emit('disconnect');
-          });
-
           function insertMessage(nick, message) {
             message = surroundHTTP(message);
             $('#chat-zone').prepend('<p><strong>' + nick + '</strong> ' + message + '</p>');
+          };
+
+          function insertPrivateMessage(nick, message) {
+            message = surroundHTTP(message);
+            $('#chat-zone').prepend('<p class="is-private"><strong>' + nick + '</strong> ' + message + '</p>');
           };
 
           function surroundHTTP(message) {
